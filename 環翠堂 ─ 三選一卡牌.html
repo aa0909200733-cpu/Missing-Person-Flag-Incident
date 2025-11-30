@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>環翠堂 ─ 三選一卡牌</title>
+<style>
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        background: #f5f1e8;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-top: 20px;
+        color: #5a4632;
+    }
+
+    .question {
+        font-size: 20px;
+        margin: 20px auto 30px;
+        line-height: 1.6;
+        max-width: 700px;
+        color: #4d3d2e;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 230px;
+        height: 320px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        cursor: pointer;
+        padding: 18px;
+        transition: transform 0.2s;
+        border: 2px solid #e3d7c2;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #7a5c3a;
+        margin-bottom: 12px;
+    }
+
+    .card-text {
+        font-size: 15px;
+        color: #4a3a2a;
+        line-height: 1.5;
+    }
+
+    .answer-section {
+        display: none;
+        padding: 30px;
+        margin-top: 40px;
+        border-top: 2px solid #baa98b;
+    }
+
+    .answer-title {
+        font-size: 26px;
+        color: #6a4b2d;
+        margin-bottom: 15px;
+    }
+
+    .answer-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #4c3b2a;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .next-btn {
+        margin-top: 25px;
+        padding: 12px 26px;
+        background: #735d47;
+        color: #fff;
+        border-radius: 8px;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>環翠堂｜三選一卡牌</h1>
+
+    <!-- 題目 -->
+    <div class="question">
+        請在下方選擇一道謎題解謎<br>
+        請問這是哪個地方？
+    </div>
+
+    <!-- 卡牌區 -->
+    <div class="cards">
+
+        <div class="card" onclick="showAnswer()">
+            <div class="card-title">兄弟同榜的傳說</div>
+            <div class="card-text">
+                這裡曾出了一對寶，<br>
+                兄弟同榜中武高。<br>
+                不是狀元也自豪，<br>
+                綠意盎然環繞繞。<br>            
+        </div>
+        </div>
+
+        <div class="card" onclick="showAnswer()">
+            <div class="card-title">綠意包圍的古厝</div>
+            <div class="card-text">
+                彰化大村有古蹟，<br>
+                紀念兄弟中武舉。<br>
+                這個地方是公廳，<br>
+                綠意盎然環繞裡。<br>
+                
+        </div>
+        </div>
+
+        <div class="card" onclick="showAnswer()">
+            <div class="card-title">武舉兄弟的起點</div>
+            <div class="card-text">
+                這裡是賴世昌、賴世爵兄弟起程之地，也是地方最引以為傲的故事來源。
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 解答 -->
+    <div id="answer" class="answer-section">
+        <div class="answer-title">正確答案：環翠堂</div>
+        <div class="answer-text">
+            環翠堂為賴氏家族的公廳，<br>
+            更是象徵「兄弟同榜中武舉」的歷史現場。<br><br>
+            下一站故事將帶你前往：<b>雅育休閒農場</b>！
+
+        </div>
+
+       </div>
+
+<script>
+function showAnswer(){
+    document.getElementById("answer").style.display = "block";
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
