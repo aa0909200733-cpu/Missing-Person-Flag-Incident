@@ -2,7 +2,9 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>環翠堂 ─ 三選一卡牌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 手機排版關鍵 -->
+<title>環翠堂 ─ 三選一卡牌（手機版）</title>
+
 <style>
     body {
         font-family: "Noto Sans TC", sans-serif;
@@ -13,101 +15,113 @@
     }
 
     .container {
-        max-width: 900px;
+        max-width: 600px; /* 手機版不需要太寬 */
         margin: auto;
-        padding: 20px;
+        padding: 16px;
     }
 
     h1 {
-        font-size: 28px;
-        margin-top: 20px;
+        font-size: 24px;
+        margin-top: 16px;
         color: #5a4632;
+        padding: 0 12px;
     }
 
     .question {
-        font-size: 20px;
-        margin: 20px auto 30px;
+        font-size: 18px;
+        margin: 20px auto 26px;
         line-height: 1.6;
-        max-width: 700px;
         color: #4d3d2e;
+        padding: 0 14px;
     }
 
     .cards {
         display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        flex-direction: column;   /* 手機版 → 改為單欄 */
+        gap: 16px;
+        width: 100%;
     }
 
     .card {
-        width: 230px;
-        height: 320px;
+        width: 100%;              /* 滿版寬度 */
         background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         cursor: pointer;
         padding: 18px;
-        transition: transform 0.2s;
+        transition: transform 0.15s;
         border: 2px solid #e3d7c2;
+        box-sizing: border-box;
     }
 
     .card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-5px);
     }
 
     .card-title {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: bold;
         color: #7a5c3a;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .card-text {
         font-size: 15px;
         color: #4a3a2a;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     .answer-section {
         display: none;
-        padding: 30px;
-        margin-top: 40px;
+        padding: 24px;
+        margin-top: 30px;
         border-top: 2px solid #baa98b;
     }
 
     .answer-title {
-        font-size: 26px;
+        font-size: 22px;
         color: #6a4b2d;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .answer-text {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.8;
         color: #4c3b2a;
-        max-width: 700px;
-        margin: auto;
+        padding: 0 10px;
     }
 
     .next-btn {
-        margin-top: 25px;
-        padding: 12px 26px;
+        margin-top: 22px;
+        padding: 14px 24px;
         background: #735d47;
         color: #fff;
-        border-radius: 8px;
+        border-radius: 10px;
         display: inline-block;
         text-decoration: none;
         font-size: 18px;
     }
+
+    /* 讓桌面版也好看（可加可不加） */
+    @media(min-width: 768px) {
+        .container {
+            max-width: 700px;
+        }
+        .card {
+            width: 70%;
+            margin: auto;
+        }
+    }
+
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
     <h1>環翠堂｜三選一卡牌</h1>
 
-    <!-- 題目 -->
     <div class="question">
         請在下方選擇一道謎題解謎<br>
         請問這是哪個地方？
@@ -122,8 +136,8 @@
                 這裡曾出了一對寶，<br>
                 兄弟同榜中武高。<br>
                 不是狀元也自豪，<br>
-                綠意盎然環繞繞。<br>            
-        </div>
+                綠意盎然環繞繞。
+            </div>
         </div>
 
         <div class="card" onclick="showAnswer()">
@@ -132,15 +146,15 @@
                 彰化大村有古蹟，<br>
                 紀念兄弟中武舉。<br>
                 這個地方是公廳，<br>
-                綠意盎然環繞裡。<br>
-                
-        </div>
+                綠意盎然環繞裡。
+            </div>
         </div>
 
         <div class="card" onclick="showAnswer()">
             <div class="card-title">武舉兄弟的起點</div>
             <div class="card-text">
-                這裡是賴世昌、賴世爵兄弟起程之地，也是地方最引以為傲的故事來源。
+                這裡是賴世昌、賴世爵兄弟起程之地，<br>
+                也是地方最引以為傲的故事來源。
             </div>
         </div>
 
@@ -148,15 +162,17 @@
 
     <!-- 解答 -->
     <div id="answer" class="answer-section">
-        <div class="answer-title">正確答案：環翠堂</div>
+        <div class="answer-title">✔ 正確答案：環翠堂</div>
         <div class="answer-text">
             環翠堂為賴氏家族的公廳，<br>
             更是象徵「兄弟同榜中武舉」的歷史現場。<br><br>
             下一站故事將帶你前往：<b>雅育休閒農場</b>！
-
         </div>
 
-       </div>
+        <a class="next-btn" href="yayu.html">前往下一站</a>
+    </div>
+
+</div>
 
 <script>
 function showAnswer(){
